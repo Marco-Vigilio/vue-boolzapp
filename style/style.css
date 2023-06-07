@@ -23,18 +23,13 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid black;
     display: flex;
 }
-
-.contact, .chat{
-    border: 2px solid black;
-}
-
 
 .contact{
     width: 420px;
     background-color: #FAFAFA;
+    border-right: .1px solid #C1C1C1;
 }
 
 /*SECTION CONTACT*/
@@ -168,11 +163,32 @@ img{
 
 .chat_area{
     border: 2px solid black;
-    background-color: rebeccapurple;
-    height: 550px;
+    background-image: url("../img/mine.jpg");
+    height: 560px;
 }
 
 .chat_message{
-    height: 65px;
-    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    font-size: 1.3rem;
+    background-color: #EAEAEA;
+}
+
+.emoji, .audio_message{
+    color: gray;
+    display: flex;
+    padding: 0 1.2rem ;
+    justify-content: center;
+    align-items: center;
+}
+
+.new_message{
+    width: 80%;
+}
+
+.new_message input{
+    border: 0;
+    padding: .6rem;
+    width: 100%;
 }
