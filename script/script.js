@@ -178,6 +178,7 @@ createApp({
             ],
             searchPerson: "",
             newMessage: "",
+            message: "ciao",
         }
     }
 }).mount("#app"); 

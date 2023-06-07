@@ -9,6 +9,7 @@
     <title>Vue Boolzapp</title>
 </head>
 <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <main id="app">
         <div class="header"></div>
         <div class="main"></div>
@@ -45,14 +46,16 @@
                     </div>
                     <div class="items">
                         <!--AGGIUNGO LE MIE ITEM-->
-                        <div class="item">
+                        <div class="item" v-for="(element, index) in contacts">
                             <div class="person">
                                 <div class="picture">
-                                    <img src="img/avatar_1.jpg" alt="img persona">
+                                    <img v-bind:src="element.avatar" v-bind:alt=" 'pictures of' + element.name ">
                                 </div>
                                 <div class="info_person">
-                                    <span>Michele</span>
-                                    <p>Ultimo messaggio inviato</p>
+                                    <span>{{element.name}}</span>
+                                    <p v-for="info in index.messages">
+                                        {{index.info.message}}
+                                    </p>
                                 </div>
                             </div>
                             <div class="last_access">
