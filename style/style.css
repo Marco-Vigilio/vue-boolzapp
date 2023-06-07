@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    height: 120px;
+    background: #009688;
+}
+
+.main{
+    height: calc(100vh - 120px);
+    background: #DCDBD0;
+}
+
+.application{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 700px; /*da vedere se mantenere*/
+    border: 2px solid black;
+    display: flex;
+}
+
+.contact, .chat{
+    border: 2px solid black;
+}
+
+.contact{
+    width: 420px;
+}
+
+.chat{
+    width: calc(100% - 420px);
+}
