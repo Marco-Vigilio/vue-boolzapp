@@ -24,7 +24,6 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 1200px;
-    height: 700px; /*da vedere se mantenere*/
     border: 2px solid black;
     display: flex;
 }
@@ -131,6 +130,11 @@ img{
     padding: .3rem;
     width: 100%;
     border: .1px solid #FBFBFB;
+}
+
+.items{
+    height: 500px;
+    overflow:auto;
 }
 
 .item{
