@@ -205,7 +205,10 @@ createApp({
 
             const formattedToday = dd + '/' + mm + '/' + yyyy;
             let yesteday = (dd - 1) + '/' + mm + '/' + yyyy;
-            yesteday = "0" + yesteday;
+            if(dd < 10){
+                yesteday = "0" + yesteday;
+            }
+            
             //last day comparing today
             if(date[0] === formattedToday){
                 let dateToday = date[1];
@@ -242,6 +245,9 @@ if (mm < 10) mm = '0' + mm;
 
 const formattedToday = dd + '/' + mm + '/' + yyyy;
 let yesterday = (dd - 01) + '/' + mm + '/' + yyyy;
-yesterday = "0" + yesterday
+if(dd < 10){
+    yesterday = "0" + yesterday
+}
+
 console.log(formattedToday);
 console.log(yesterday);
