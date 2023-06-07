@@ -54,7 +54,7 @@
                                 <div class="info_person">
                                     <span>{{element.name}}</span>
                                     <p v-for="info in index.messages">
-                                        {{index.info.message}}
+                                        {{getLastMessage(element.messages)}}
                                     </p>
                                 </div>
                             </div>

@@ -180,5 +180,12 @@ createApp({
             newMessage: "",
             message: "ciao",
         }
-    }
+    },
+    methods:{
+        getLastMessage(contactMessagesArray) {
+            const last = contactMessagesArray[contactMessagesArray.length-1];
+            const lastMessage = last.message;
+            return lastMessage;
+        }
+    },
 }).mount("#app"); 
