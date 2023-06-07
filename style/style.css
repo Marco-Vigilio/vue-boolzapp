@@ -36,3 +36,34 @@
 .chat{
     width: calc(100% - 420px);
 }
+
+.my_contact{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.me{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.other_function{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.picture{
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+img{
+    width: 100%;
+    object-fit: contain;
+}
