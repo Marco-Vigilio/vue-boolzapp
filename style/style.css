@@ -35,7 +35,7 @@ body{
 
 .contact{
     width: 420px;
-    background-color: white;
+    background-color: #FAFAFA;
 }
 
 .chat{
@@ -131,4 +131,29 @@ img{
     padding: .3rem;
     width: 100%;
     border: .1px solid #FBFBFB;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: .5rem 0;
+    margin-bottom: .1rem;
+}
+
+.person{
+    display: flex;
+}
+
+.person .picture{
+    margin: 0 1rem;
+}
+
+.info_person p, .last_access{
+    font-size: .8rem;
+    color: gray;
+}
+
+.last_access{
+    margin-right: .5rem;
 }
