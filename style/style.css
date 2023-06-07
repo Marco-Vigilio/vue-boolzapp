@@ -162,10 +162,54 @@ img{
 }
 
 .chat_area{
-    border: 2px solid black;
     background-image: url("../img/mine.jpg");
     height: 560px;
+    overflow: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
 }
+
+.message{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: .5rem;
+
+}
+
+.message span{
+    align-self: flex-end;
+}
+
+.my_message{
+    align-self: flex-end;
+    background-color: #D5F9BA;
+}
+
+.you_message{
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .chat_message{
     display: flex;
