@@ -35,6 +35,7 @@ body{
 
 .contact{
     width: 420px;
+    background-color: white;
 }
 
 .chat{
@@ -110,7 +111,7 @@ img{
 
 .search{
     background-color: #FAFAFA;
-    padding: .3rem;
+    padding: .4rem;
     display: flex;
 }
 
@@ -119,14 +120,15 @@ img{
     justify-content: center;
     align-items: center;
     background-color: white;
-    padding: .5rem 1rem;
+    font-size: .8rem;
+    padding: .3rem 1.3rem;
     color: #B1B1B1;
-    border: .3px solid #B1B1B1;
+    border: .1px solid #FBFBFB;
     border-right: 0;
 }
 
 .search input{
-    padding: .5rem;
+    padding: .3rem;
     width: 100%;
-    border: .3px solid #B1B1B1;
+    border: .1px solid #FBFBFB;
 }
