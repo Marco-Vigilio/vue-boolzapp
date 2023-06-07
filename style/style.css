@@ -23,7 +23,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1200px;
+    max-width: 1200px;
     height: 700px; /*da vedere se mantenere*/
     border: 2px solid black;
     display: flex;
@@ -106,4 +106,27 @@ img{
 .notify a{
     font-size: .8rem;
     color: gray;
+}
+
+.search{
+    background-color: #FAFAFA;
+    padding: .3rem;
+    display: flex;
+}
+
+.search_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: .5rem 1rem;
+    color: #B1B1B1;
+    border: .3px solid #B1B1B1;
+    border-right: 0;
+}
+
+.search input{
+    padding: .5rem;
+    width: 100%;
+    border: .3px solid #B1B1B1;
 }
