@@ -46,20 +46,20 @@
                     </div>
                     <div class="items">
                         <!--AGGIUNGO LE MIE ITEM-->
-                        <div class="item" v-for="(element, index) in contacts">
+                        <div class="item" v-for="(element, index) in contacts" @click>
                             <div class="person">
                                 <div class="picture">
                                     <img v-bind:src="element.avatar" v-bind:alt=" 'pictures of' + element.name ">
                                 </div>
                                 <div class="info_person">
                                     <span>{{element.name}}</span>
-                                    <p v-for="info in index.messages">
+                                    <p>
                                         {{getLastMessage(element.messages)}}
                                     </p>
                                 </div>
                             </div>
                             <div class="last_access">
-                                12:00
+                                {{getDataMessage(element.messages)}}
                             </div>
                         </div>
                     </div>
@@ -83,18 +83,22 @@
                     </div>
                 </div>
                 <div class="chat_area">
-                    <div class="message my_message">
+                    
+                    <div class="message" v-for="element in contacts" v-bind:class="my_message">
                         <p>Hai portato a spasso il cane?</p>
                         <span class="last_access">15:30</span>
                     </div>
+                    <!--
                     <div class="message my_message">
                         <p>Ricordati di stendere i panni</p> 
                         <span class="last_access">15:50</span>
                     </div>
+                    
                     <div class="message you_message">
                         <p>Tutto fatto!</p>
                         <span class="last_access">16:00</span>
                     </div>
+                    -->
                 </div>
                 <div class="chat_message">
                     <div class="emoji"><i class="fa-regular fa-face-smile"></i></div>

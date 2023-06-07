@@ -138,6 +138,11 @@ img{
     margin-bottom: .1rem;
 }
 
+.item:hover{
+    background-color: #E9EBEB;
+    cursor: pointer;
+}
+
 .person{
     display: flex;
 }
@@ -177,11 +182,8 @@ img{
     margin: .5rem;
     padding: .5rem;
     border-radius: .5rem;
+    background-color: #8EDAFC;
 
-}
-
-.message span{
-    align-self: flex-end;
 }
 
 .my_message{
@@ -189,27 +191,13 @@ img{
     background-color: #D5F9BA;
 }
 
+.my_message span{
+    align-self: flex-end;
+}
+
 .you_message{
     background-color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .chat_message{
     display: flex;

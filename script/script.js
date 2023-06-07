@@ -186,6 +186,62 @@ createApp({
             const last = contactMessagesArray[contactMessagesArray.length-1];
             const lastMessage = last.message;
             return lastMessage;
-        }
+        },
+
+        getDataMessage(messagesArray){
+            const last = messagesArray[messagesArray.length-1];
+            const lastDate = last.date;
+
+            let date = lastDate.split(" ");
+
+            //stringa in date today
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            let mm = today.getMonth() + 1; // Months start at 0!
+            let dd = today.getDate();
+
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+
+            const formattedToday = dd + '/' + mm + '/' + yyyy;
+            let yesteday = (dd - 1) + '/' + mm + '/' + yyyy;
+            yesteday = "0" + yesteday;
+            //last day comparing today
+            if(date[0] === formattedToday){
+                let dateToday = date[1];
+                dateToday = dateToday.split(":");
+                dateToday.pop();
+                let hour = dateToday.join(":");
+                return hour;
+            }
+            else if(date[0] === yesteday){
+                return "ieri";
+            }
+            else{
+                return date[0];
+            }
+           //return lastDate;
+        },
+
+        getStatus(contactMessagesArray) {
+            const last = contactMessagesArray[contactMessagesArray.length-1];
+            const lastMessage = last.message;
+            return lastMessage;
+        },
     },
 }).mount("#app"); 
+
+
+const today = new Date();
+const yyyy = today.getFullYear();
+let mm = today.getMonth() + 1; // Months start at 0!
+let dd = today.getDate();
+
+if (dd < 10) dd = '0' + dd;
+if (mm < 10) mm = '0' + mm;
+
+const formattedToday = dd + '/' + mm + '/' + yyyy;
+let yesterday = (dd - 01) + '/' + mm + '/' + yyyy;
+yesterday = "0" + yesterday
+console.log(formattedToday);
+console.log(yesterday);
