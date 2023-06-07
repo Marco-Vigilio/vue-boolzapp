@@ -39,6 +39,7 @@ body{
 
 /*SECTION CONTACT*/
 .my_contact{
+    /*height: 65px;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -162,4 +163,16 @@ img{
 /*SECTION CHAT*/
 .chat{
     width: 700px;
+    height: 100%;
+}
+
+.chat_area{
+    border: 2px solid black;
+    background-color: rebeccapurple;
+    height: 550px;
+}
+
+.chat_message{
+    height: 65px;
+    border: 2px solid black;
 }
