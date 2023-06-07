@@ -23,7 +23,6 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 1200px;
     border: 2px solid black;
     display: flex;
 }
@@ -32,15 +31,13 @@ body{
     border: 2px solid black;
 }
 
+
 .contact{
     width: 420px;
     background-color: #FAFAFA;
 }
 
-.chat{
-    width: calc(100% - 420px);
-}
-
+/*SECTION CONTACT*/
 .my_contact{
     display: flex;
     justify-content: space-between;
@@ -51,12 +48,12 @@ body{
     padding-right: 1rem;
 }
 
-.me{
+.me, .you{
     display: flex;
     align-items: center;
 }
 
-.me span{
+.me span, .you span, .you p{
     margin-left: .5rem;
 }
 
@@ -160,4 +157,9 @@ img{
 
 .last_access{
     margin-right: .5rem;
+}
+
+/*SECTION CHAT*/
+.chat{
+    width: 700px;
 }
