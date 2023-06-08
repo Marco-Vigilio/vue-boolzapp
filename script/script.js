@@ -176,7 +176,8 @@ createApp({
                     ],
                 }
             ],
-            indexElement: "0",
+            pictureImg: "",
+            indexElement: 0,
             searchPerson: "",
             newMessage: "",
             message: "ciao",
@@ -229,7 +230,7 @@ createApp({
 
         getArrayMessages(){
             let object = this.contacts[this.indexElement];
-            console.log(object.messages);
+            //console.log(object.messages);
             let arrayMessage = object.messages;
             //in piu
             return arrayMessage;
@@ -253,10 +254,34 @@ createApp({
 
         getIndex(index){
             this.indexElement = index;
-            console.log(this.indexElement);
+            //console.log(this.indexElement);
+
+            //getObject(this.indexElement);
+
             getArrayMessages(this.indexElement);
             return this.indexElement;
         },
+        
+        getName(index){
+            index = this.indexElement;
+            let OggettoInPosizione = this.contacts[index];
+            //getName(OggettoInPosizione);
+        
+            let nome = OggettoInPosizione.name
+            //console.log(nome);
+            return nome;
+            
+        },
+
+        getImage(index){
+            index = this.indexElement;
+            let OggettoInPosizione = this.contacts[index];
+        
+            let photoUser = OggettoInPosizione.avatar
+            this.pictureImg = photoUser;
+            console.log(pictureImg);
+            return this.pictureImg
+        }
         
     },
     mounted(){
@@ -450,18 +475,18 @@ let contatti = [
 
 function getElement(){
     contatti.forEach(element => {
-        console.log(element.name);
+        //console.log(element.name);
     });
 }
 
 function getArrayMessages(objectArray){
     messaggi = contatti[objectArray];
-    console.log(messaggi.messages);
+    //console.log(messaggi.messages);
     let arrayMessaggi = messaggi.messages;
     //in piu
     arrayMessaggi.forEach(element => {
         let messaggio = element.message;
-        console.log(messaggio);
+        //console.log(messaggio);
         return messaggio;
     });
 
@@ -475,9 +500,46 @@ function getArrayMessages(objectArray){
     */
 }
 
+let indice = "1";
 
-function getIndex(index){
-    return index;
+function getName(index){
+    index = indice;
+    let OggettoInPosizione = contatti[index];
+    //getName(OggettoInPosizione);
+
+    let nome = OggettoInPosizione.name
+    //console.log(nome);
+    return nome;
+    
+}
+
+function getNameElement(oggetto){
+    let name = oggetto.name;
+    //console.log(name);
+    return name;
+}
+
+getName();
+
+/*
+function getObject(){
+    let object = contatti[1];
+    console.log(object);
 }
 
 getArrayMessages(1);
+getObject(1);
+
+let oggetto = getObject(1);
+console.log(oggetto);
+*/
+
+function getImage(index){
+    index = indice;
+    let OggettoInPosizione = contatti[index];
+
+    let photoUser = OggettoInPosizione.avatar
+    //console.log(photoUser);
+}
+
+getImage();
