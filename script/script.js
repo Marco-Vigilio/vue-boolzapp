@@ -259,8 +259,11 @@ createApp({
             //console.log(this.indexElement);
 
             //getObject(this.indexElement);
+            
             getImage(this.indexElement);
             getArrayMessages(this.indexElement);
+
+            getLastData(this.indexElement);
             return this.indexElement;
         },
         
@@ -297,6 +300,19 @@ createApp({
             let strinHourMin = arrayHour.join(":");
             //console.log(strinHourMin);
             return strinHourMin;
+        },
+
+        getLastData(index){
+            index = this.indexElement;
+            let OggettoInPosizione = this.contacts[index];
+        
+            let messaggi = OggettoInPosizione.messages
+            let ultimoElemento = messaggi.pop(); 
+            console.log(ultimoElemento.date);
+            //ultimaData = ultimoElemento.date;
+            let dataEl = getHour(ultimoElemento);
+            console.log(dataEl);
+            return dataEl;
         },
         
     },
@@ -574,11 +590,26 @@ function getHour(elementi){
     return strinHourMin;
 }
 
-let messaggio = 
-    {
+let messaggio = {
         date: '10/01/2020 15:30:55',
         message: 'Ciao, andiamo a mangiare la pizza stasera?',
         status: 'received'
     };
 
 getHour(messaggio);
+
+/*
+function getLastData(index){
+    index = indice;
+    let OggettoInPosizione = contatti[index];
+
+    let messaggi = OggettoInPosizione.messages
+    let ultimoElemento = messaggi.pop(); 
+    console.log(ultimoElemento.date);
+    //ultimaData = ultimoElemento.date;
+    let dataEl = getHour(ultimoElemento);
+    console.log(dataEl);
+}
+
+getLastData();
+*/
