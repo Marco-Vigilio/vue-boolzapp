@@ -263,7 +263,7 @@ createApp({
             getImage(this.indexElement);
             getArrayMessages(this.indexElement);
 
-            getLastData(this.indexElement);
+            //getLastData(this.indexElement);
             return this.indexElement;
         },
         
@@ -301,20 +301,29 @@ createApp({
             //console.log(strinHourMin);
             return strinHourMin;
         },
-
-        getLastData(index){
-            index = this.indexElement;
-            let OggettoInPosizione = this.contacts[index];
         
+        getLastData(){
+            let OggettoInPosizione = this.contacts[this.indexElement];
+            console.log(OggettoInPosizione);
+            let messaggi = OggettoInPosizione.messages;
+
+            //console.log(messaggi);
+            /*
             let messaggi = OggettoInPosizione.messages
             let ultimoElemento = messaggi.pop(); 
+            /*
             console.log(ultimoElemento.date);
             //ultimaData = ultimoElemento.date;
             let dataEl = getHour(ultimoElemento);
             console.log(dataEl);
-            return dataEl;
+            */
+            /*
+            let dataE = ultimoElemento.date;
+            console.log(dataE);
+            return dataE;
+            */
         },
-        
+
     },
     mounted(){
 
