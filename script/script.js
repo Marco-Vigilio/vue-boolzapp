@@ -259,7 +259,7 @@ createApp({
             //console.log(this.indexElement);
 
             //getObject(this.indexElement);
-
+            getImage(this.indexElement);
             getArrayMessages(this.indexElement);
             return this.indexElement;
         },
@@ -281,7 +281,7 @@ createApp({
         
             let photoUser = OggettoInPosizione.avatar
             this.pictureImg = photoUser;
-            console.log(pictureImg);
+            //console.log(this.pictureImg);
             return this.pictureImg
         }
         

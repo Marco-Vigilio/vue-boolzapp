@@ -69,8 +69,8 @@
                 <div class="chat_person my_contact">
                     <div class="you">
                         <div class="picture">
-                            <img src="img/avatar_1.jpg" alt="img persona">
-                            <p>{{pictureImg}}</p>
+                            <img v-bind:src="getImage()" alt="img persona">
+                            <p>{{getImage()}}</p>
                         </div>
                         <div class="info_person">
                             <span>{{getName()}}</span>
