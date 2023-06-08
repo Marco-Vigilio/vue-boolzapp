@@ -305,15 +305,80 @@ createApp({
         getLastData(index){
             index = this.indexElement;
             let OggettoInPosizione = this.contacts[index];
-            console.log(OggettoInPosizione);
+            //console.log(OggettoInPosizione);
             let arrayMessaggi = OggettoInPosizione.messages;
-            console.log(arrayMessaggi);
+            //console.log(arrayMessaggi);
             let last = arrayMessaggi[arrayMessaggi.length-1];
-            console.log(last);
-            let ora = getHour(last);
-            console.log(ora);
+            //console.log(last);
+            let ora = this.getLaData(last);
+            //console.log(ora);
             return ora;
         },
+
+        getLaData(elemento){
+            let data = elemento.date;
+            let arrayData = data.split(" ");
+            let dataGiorno = arrayData[0];
+            let avviso;
+            //data di oggi
+            let dataOggi = new Date();
+            const yyyy = dataOggi.getFullYear();
+            let mm = dataOggi.getMonth() + 1; // Months start at 0!
+            let dd = dataOggi.getDate();
+        
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+        
+            dataOggi = dd + '/' + mm + '/' + yyyy;
+            let yesterday = (dd - 1) + '/' + mm + '/' + yyyy;
+            if(dd < 10){
+                yesterday = "0" + yesterday;
+            }
+        
+            if(dataGiorno === dataOggi){
+                let stringHour = arrayData[1];
+                //console.log(stringHour);
+                let arrayHour = stringHour.split(":");
+                //console.log(arrayHour);
+                let arrayHourMin = arrayHour.pop();
+                //console.log(arrayHourMin);
+                let strinHourMin = arrayHour.join(":");
+                //console.log(strinHourMin);
+                avviso = "alle " + strinHourMin;
+                return avviso;
+            }
+            else if(dataGiorno === yesterday){
+                let stringHour = arrayData[1];
+                //console.log(stringHour);
+                let arrayHour = stringHour.split(":");
+                //console.log(arrayHour);
+                let arrayHourMin = arrayHour.pop();
+                //console.log(arrayHourMin);
+                let strinHourMin = arrayHour.join(":");
+                //console.log(strinHourMin);
+                avviso = "Ieri alle " + strinHourMin;
+                return avviso;
+            }
+            else{
+                avviso = "il " + dataGiorno;
+                return avviso;
+            }
+        
+            /*
+            let data = elementi.date;
+            let arrayData = data.split(" ");
+            let stringHour = arrayData[1];
+            //console.log(stringHour);
+            let arrayHour = stringHour.split(":");
+            //console.log(arrayHour);
+            let arrayHourMin = arrayHour.pop();
+            //console.log(arrayHourMin);
+            let strinHourMin = arrayHour.join(":");
+            //console.log(strinHourMin);
+            return strinHourMin;
+            */
+        },
+
 
     },
     mounted(){
@@ -575,7 +640,7 @@ function getImage(index){
 }
 
 getImage();
-
+/*
 function getHour(elementi){
     let data = elementi.date;
     let arrayData = data.split(" ");
@@ -597,18 +662,83 @@ let messaggio = {
     };
 
 getHour(messaggio);
-
-
+*/
+/*
 function getLastData(index){
     index = indice;
     let OggettoInPosizione = contatti[index];
-    console.log(OggettoInPosizione);
+    //console.log(OggettoInPosizione);
     let arrayMessaggi = OggettoInPosizione.messages;
-    console.log(arrayMessaggi);
+    //console.log(arrayMessaggi);
     let last = arrayMessaggi[arrayMessaggi.length-1];
-    console.log(last);
-    let ora = getHour(last);
+    //console.log(last);
+    let ora = getLaData(last);
     console.log(ora);
 }
 
 getLastData();
+
+function getLaData(elemento){
+    let data = elemento.date;
+    let arrayData = data.split(" ");
+    let dataGiorno = arrayData[0];
+    let avviso;
+    //data di oggi
+    let dataOggi = new Date();
+    const yyyy = dataOggi.getFullYear();
+    let mm = dataOggi.getMonth() + 1; // Months start at 0!
+    let dd = dataOggi.getDate();
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+
+    dataOggi = dd + '/' + mm + '/' + yyyy;
+    let yesterday = (dd - 1) + '/' + mm + '/' + yyyy;
+    if(dd < 10){
+        yesterday = "0" + yesterday;
+    }
+
+    if(dataGiorno === dataOggi){
+        let stringHour = arrayData[1];
+        //console.log(stringHour);
+        let arrayHour = stringHour.split(":");
+        //console.log(arrayHour);
+        let arrayHourMin = arrayHour.pop();
+        //console.log(arrayHourMin);
+        let strinHourMin = arrayHour.join(":");
+        //console.log(strinHourMin);
+        avviso = "alle " + strinHourMin;
+        return avviso;
+    }
+    else if(dataGiorno === yesterday){
+        let stringHour = arrayData[1];
+        //console.log(stringHour);
+        let arrayHour = stringHour.split(":");
+        //console.log(arrayHour);
+        let arrayHourMin = arrayHour.pop();
+        //console.log(arrayHourMin);
+        let strinHourMin = arrayHour.join(":");
+        //console.log(strinHourMin);
+        avviso = "Ieri alle " + strinHourMin;
+        return avviso;
+    }
+    else{
+        avviso = "il " + dataGiorno;
+        return avviso;
+    }
+
+    /*
+    let data = elementi.date;
+    let arrayData = data.split(" ");
+    let stringHour = arrayData[1];
+    //console.log(stringHour);
+    let arrayHour = stringHour.split(":");
+    //console.log(arrayHour);
+    let arrayHourMin = arrayHour.pop();
+    //console.log(arrayHourMin);
+    let strinHourMin = arrayHour.join(":");
+    //console.log(strinHourMin);
+    return strinHourMin;
+    
+}
+*/
