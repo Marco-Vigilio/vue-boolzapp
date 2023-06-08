@@ -102,7 +102,10 @@
                 </div>
                 <div class="chat_message">
                     <div class="emoji"><i class="fa-regular fa-face-smile"></i></div>
-                    <div class="new_message"><input type="text" placeholder="Scrivi un messaggio"></div>
+                    <div class="new_message">
+                        <input v-model="newMessageText" type="text" placeholder="Scrivi un messaggio" @keyup.enter="newMessage()">
+                        <p>{{newMessageText}}</p>
+                    </div>
                     <div class="audio_message"><i class="fa-solid fa-microphone"></i></div>
                 </div>
             </section>

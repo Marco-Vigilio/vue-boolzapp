@@ -179,9 +179,9 @@ createApp({
             myMessage: "my_message", 
             youMessage: "you_message",
             pictureImg: "",
-            indexElement: 1,
-            searchPerson: "",
-            newMessage: "",
+            indexElement: 0,
+            searchPerson: "", //QUANDO RICERCO UNA PERSONA NEL INPUT
+            newMessageText: "", //NUOVO MESSAGGIO
             message: "ciao",
         }
     },
@@ -379,10 +379,44 @@ createApp({
             */
         },
 
+        newMessage(){
+            let text = this.newMessageText;
+            console.log(text);
+            let dataOggi = new Date();
+            const yyyy = dataOggi.getFullYear();
+            let mm = dataOggi.getMonth() + 1; // Months start at 0!
+            let dd = dataOggi.getDate();
+
+            let hour = dataOggi.getHours();
+            let min = dataOggi.getMinutes();
+            let sec = dataOggi.getSeconds();
+        
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+
+            if (hour < 10) hour = '0' + hour;
+            if (min < 10) min = '0' + min;
+            if (sec < 10) sec = '0' + sec;
+        
+            let day = dd + '/' + mm + '/' + yyyy;
+            let hourMinSec =  hour + ':' + min + ':' + sec;
+            dataOggi = day + " " + hourMinSec;
+
+            let oggettoInPosizione = this.contacts[this.indexElement];
+            let arrayMessaggi = oggettoInPosizione.messages;
+            object = {
+                date: dataOggi,
+                message: text,
+                status: 'sent',
+            }
+            arrayMessaggi.push(object);
+            console.log(arrayMessaggi);
+        },
+
 
     },
     mounted(){
-
+        //newMessage();
     },
 }).mount("#app"); 
 
@@ -740,5 +774,17 @@ function getLaData(elemento){
     //console.log(strinHourMin);
     return strinHourMin;
     
+}
+*/
+/*
+function newMessage(){
+    let text = this.newMessageText;
+    console.log(text);
+    let data = new Date();
+    return {
+        date: data,
+        message: text,
+        status: 'sent'
+    }
 }
 */
