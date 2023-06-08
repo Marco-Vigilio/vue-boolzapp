@@ -46,7 +46,7 @@
                     </div>
                     <div class="items">
                         <!--AGGIUNGO LE MIE ITEM-->
-                        <div class="item" v-for="(element, index) in contacts" @click="">
+                        <div class="item" v-for="(element, index) in contacts" @click="getIndex(index)">
                             <div class="person">
                                 <div class="picture">
                                     <img v-bind:src="element.avatar" v-bind:alt=" 'pictures of' + element.name ">
@@ -84,9 +84,9 @@
                 </div>
                 <div class="chat_area">
                     
-                    <div class="message" v-for="(element, index) in contacts">
-                        <p>{{ getArrayMessages(1) }}</p>
-                        <span class="last_access">15:30</span>
+                    <div class="message" v-for="(element, index) in getArrayMessages()" v-bind:class="my_message">
+                        <p>{{element.message}}</p>
+                        <span class="last_access">{{element.date}}</span>
                     </div>
                     <!--
                     <div class="message my_message">

@@ -176,6 +176,7 @@ createApp({
                     ],
                 }
             ],
+            indexElement: "0",
             searchPerson: "",
             newMessage: "",
             message: "ciao",
@@ -226,12 +227,12 @@ createApp({
            //return lastDate;
         },
 
-        getArrayMessages(objectArray){
-            let messaggi = this.contacts[objectArray];
-            console.log(messaggi.messages);
-            let arrayMessaggi = messaggi.messages;
+        getArrayMessages(){
+            let object = this.contacts[this.indexElement];
+            console.log(object.messages);
+            let arrayMessage = object.messages;
             //in piu
-            return arrayMessaggi;
+            return arrayMessage;
             /*
             arrayMessaggi.forEach(element => {
                 let messaggio = element.message;
@@ -248,6 +249,13 @@ createApp({
             
             });
             */
+        },
+
+        getIndex(index){
+            this.indexElement = index;
+            console.log(this.indexElement);
+            getArrayMessages(this.indexElement);
+            return this.indexElement;
         },
         
     },
@@ -465,6 +473,11 @@ function getArrayMessages(objectArray){
     
     });
     */
+}
+
+
+function getIndex(index){
+    return index;
 }
 
 getArrayMessages(1);
