@@ -179,7 +179,7 @@ createApp({
             myMessage: "my_message", 
             youMessage: "you_message",
             pictureImg: "",
-            indexElement: 0,
+            indexElement: 1,
             searchPerson: "",
             newMessage: "",
             message: "ciao",
@@ -302,26 +302,17 @@ createApp({
             return strinHourMin;
         },
         
-        getLastData(){
-            let OggettoInPosizione = this.contacts[this.indexElement];
+        getLastData(index){
+            index = this.indexElement;
+            let OggettoInPosizione = this.contacts[index];
             console.log(OggettoInPosizione);
-            let messaggi = OggettoInPosizione.messages;
-
-            //console.log(messaggi);
-            /*
-            let messaggi = OggettoInPosizione.messages
-            let ultimoElemento = messaggi.pop(); 
-            /*
-            console.log(ultimoElemento.date);
-            //ultimaData = ultimoElemento.date;
-            let dataEl = getHour(ultimoElemento);
-            console.log(dataEl);
-            */
-            /*
-            let dataE = ultimoElemento.date;
-            console.log(dataE);
-            return dataE;
-            */
+            let arrayMessaggi = OggettoInPosizione.messages;
+            console.log(arrayMessaggi);
+            let last = arrayMessaggi[arrayMessaggi.length-1];
+            console.log(last);
+            let ora = getHour(last);
+            console.log(ora);
+            return ora;
         },
 
     },
@@ -521,7 +512,7 @@ function getElement(){
 }
 
 function getArrayMessages(objectArray){
-    messaggi = contatti[objectArray];
+    let messaggi = contatti[objectArray];
     //console.log(messaggi.messages);
     let arrayMessaggi = messaggi.messages;
     //in piu
@@ -607,18 +598,17 @@ let messaggio = {
 
 getHour(messaggio);
 
-/*
+
 function getLastData(index){
     index = indice;
     let OggettoInPosizione = contatti[index];
-
-    let messaggi = OggettoInPosizione.messages
-    let ultimoElemento = messaggi.pop(); 
-    console.log(ultimoElemento.date);
-    //ultimaData = ultimoElemento.date;
-    let dataEl = getHour(ultimoElemento);
-    console.log(dataEl);
+    console.log(OggettoInPosizione);
+    let arrayMessaggi = OggettoInPosizione.messages;
+    console.log(arrayMessaggi);
+    let last = arrayMessaggi[arrayMessaggi.length-1];
+    console.log(last);
+    let ora = getHour(last);
+    console.log(ora);
 }
 
 getLastData();
-*/
