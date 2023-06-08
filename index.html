@@ -70,7 +70,6 @@
                     <div class="you">
                         <div class="picture">
                             <img v-bind:src="getImage()" alt="img persona">
-                            <p>{{getImage()}}</p>
                         </div>
                         <div class="info_person">
                             <span>{{getName()}}</span>
@@ -87,7 +86,7 @@
                     
                     <div class="message" v-for="(element, index) in getArrayMessages()" v-bind:class="element.status === 'sent' ? myMessage : youMessage">
                         <p>{{element.message}}</p>
-                        <span class="last_access">{{element.date}}</span>
+                        <span class="last_access">{{getHour(element)}}</span>
                     </div>
                     <!--
                     <div class="message my_message">

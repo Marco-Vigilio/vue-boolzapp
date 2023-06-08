@@ -283,7 +283,21 @@ createApp({
             this.pictureImg = photoUser;
             //console.log(this.pictureImg);
             return this.pictureImg
-        }
+        },
+
+        getHour(elementi){
+            let data = elementi.date;
+            let arrayData = data.split(" ");
+            let stringHour = arrayData[1];
+            //console.log(stringHour);
+            let arrayHour = stringHour.split(":");
+            //console.log(arrayHour);
+            let arrayHourMin = arrayHour.pop();
+            //console.log(arrayHourMin);
+            let strinHourMin = arrayHour.join(":");
+            //console.log(strinHourMin);
+            return strinHourMin;
+        },
         
     },
     mounted(){
@@ -545,3 +559,26 @@ function getImage(index){
 }
 
 getImage();
+
+function getHour(elementi){
+    let data = elementi.date;
+    let arrayData = data.split(" ");
+    let stringHour = arrayData[1];
+    //console.log(stringHour);
+    let arrayHour = stringHour.split(":");
+    //console.log(arrayHour);
+    let arrayHourMin = arrayHour.pop();
+    //console.log(arrayHourMin);
+    let strinHourMin = arrayHour.join(":");
+    //console.log(strinHourMin);
+    return strinHourMin;
+}
+
+let messaggio = 
+    {
+        date: '10/01/2020 15:30:55',
+        message: 'Ciao, andiamo a mangiare la pizza stasera?',
+        status: 'received'
+    };
+
+getHour(messaggio);
