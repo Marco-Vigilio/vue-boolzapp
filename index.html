@@ -85,7 +85,7 @@
                 </div>
                 <div class="chat_area">
                     
-                    <div class="message" v-for="(element, index) in getArrayMessages()" v-bind:class="my_message">
+                    <div class="message" v-for="(element, index) in getArrayMessages()" v-bind:class="element.status === 'sent' ? myMessage : youMessage">
                         <p>{{element.message}}</p>
                         <span class="last_access">{{element.date}}</span>
                     </div>

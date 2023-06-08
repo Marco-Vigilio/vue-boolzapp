@@ -191,7 +191,7 @@ img{
     background-color: #D5F9BA;
 }
 
-.my_message span{
+.my_message span, .you_message span{
     align-self: flex-end;
 }
 

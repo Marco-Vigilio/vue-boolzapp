@@ -176,6 +176,8 @@ createApp({
                     ],
                 }
             ],
+            myMessage: "my_message", 
+            youMessage: "you_message",
             pictureImg: "",
             indexElement: 0,
             searchPerson: "",
