@@ -411,6 +411,7 @@ createApp({
             }
             arrayMessaggi.push(object);
             console.log(arrayMessaggi);
+            this.newMessageText = "";
         },
 
 
