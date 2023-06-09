@@ -85,19 +85,16 @@
                     </div>
                 </div>
                 <div class="chat_area">
-                    
                     <div class="message" v-for="(element, index) in getArrayMessages()" v-bind:class="element.status === 'sent' ? myMessage : youMessage">
                         <div class="flex_message">
                             <p>{{element.message}}</p>
                             <i v-if=" element.status === 'sent' " class="fa-solid fa-angle-down"></i>
                         </div>
                         <span class="last_access">{{getHour(element)}}</span>
-                        <!--
                         <div class="function_box" v-if=" element.status === 'sent' ">
                             <p>Message info</p>
-                            <p>Delete message</p>
+                            <p>Delete Message</p>
                         </div>
-                        -->
                     </div>
 
                 </div>
