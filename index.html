@@ -46,22 +46,24 @@
                     </div>
                     <div class="items">
                         <!--AGGIUNGO LE MIE ITEM-->
-                        <div class="item" v-for="(element, index) in contacts" @click="getIndex(index)">
-                            <div class="person">
-                                <div class="picture">
-                                    <img v-bind:src="element.avatar" v-bind:alt=" 'pictures of' + element.name ">
-                                </div>
-                                <div class="info_person">
-                                    <span>{{element.name}}</span>
-                                    <p>
-                                        {{getLastMessage(element.messages)}}
-                                    </p>
+                            <div v-for="(element, index) in contacts" @click="getIndex(index)" >
+                                <div class="item" v-if="element.visible === true">
+                                    <div class="person" >
+                                        <div class="picture">
+                                            <img v-bind:src="element.avatar" v-bind:alt=" 'pictures of' + element.name ">
+                                        </div>
+                                        <div class="info_person">
+                                            <span>{{element.name}}</span>
+                                            <p>
+                                                {{getLastMessage(element.messages)}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="last_access">
+                                        {{getDataMessage(element.messages)}}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="last_access">
-                                {{getDataMessage(element.messages)}}
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

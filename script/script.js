@@ -456,11 +456,12 @@ createApp({
                 let nomeGrande = nome.toUpperCase();
                 let parolaGrande = parola.toUpperCase();
                 if(nomeGrande.includes(parolaGrande)){
+                    element.visible = true;
                     console.log(nome, element.visible);
                 }
                 else{
                     element.visible = false;
-                    //console.log(nome, element.visible);
+                    console.log(nome, element.visible);
                 }
                 
             });
