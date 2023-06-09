@@ -167,6 +167,7 @@ img{
 }
 
 .chat_area{
+    position: relative;
     background-image: url("../img/mine.jpg");
     height: 560px;
     overflow: auto;
@@ -176,6 +177,7 @@ img{
 }
 
 .message{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 40%;
@@ -193,6 +195,25 @@ img{
 
 .my_message span, .you_message span{
     align-self: flex-end;
+}
+
+.my_message i{
+    display: none;
+}
+
+.my_message:hover i{
+    display: block;
+    color: rgb(169, 169, 169);
+}
+
+.my_message i:hover {
+    color: black;
+}
+
+.flex_message{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .you_message{
