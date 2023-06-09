@@ -210,11 +210,27 @@ img{
     color: black;
 }
 
+i:active , .function_box{
+    display: block;
+}
+
 .flex_message{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.function_box{
+    display: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: 0;
+    right: 0;
+    background-color: red;
+}
+
 
 .you_message{
     background-color: white;
