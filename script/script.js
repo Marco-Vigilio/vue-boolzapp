@@ -178,6 +178,7 @@ createApp({
             ],
             myMessage: "my_message", 
             youMessage: "you_message",
+            display: "none",//chiamo una funzione dove nella stringa richiamo la classe css Block
             pictureImg: "",
             indexElement: 0,
             namePerson: "", //QUANDO RICERCO UNA PERSONA NEL INPUT
@@ -468,10 +469,14 @@ createApp({
             console.log();
         },
 
+        boxFunctionMessage(){
+            this.display = "block";
+            console.log(this.display);
+        },
+
 
     },
     mounted(){
-        
         //newMessage();
     },
 }).mount("#app"); 

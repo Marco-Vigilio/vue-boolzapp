@@ -8,6 +8,14 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.block{
+    display: block;
+}
+
+.none{
+    display: none;
+}
+
 .header{
     height: 120px;
     background: #009688;
@@ -221,7 +229,7 @@ img{
     position: absolute;
     z-index: 1;
     top: 60%;
-    right: 0;
+    right: 2%;
     background-color: white;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
