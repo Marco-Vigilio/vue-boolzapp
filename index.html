@@ -42,7 +42,7 @@
                         <div class="search_icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <input type="text" name="contact" id="contact" placeholder=" Cerca o inizia una nuova chat">
+                        <input type="text" name="contact" id="contact" placeholder=" Cerca o inizia una nuova chat" v-model="namePerson" @keyup="searchPerson()">
                     </div>
                     <div class="items">
                         <!--AGGIUNGO LE MIE ITEM-->

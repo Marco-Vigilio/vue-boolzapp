@@ -180,7 +180,7 @@ createApp({
             youMessage: "you_message",
             pictureImg: "",
             indexElement: 0,
-            searchPerson: "", //QUANDO RICERCO UNA PERSONA NEL INPUT
+            namePerson: "", //QUANDO RICERCO UNA PERSONA NEL INPUT
             newMessageText: "", //NUOVO MESSAGGIO
             message: "ciao",
         }
@@ -447,11 +447,30 @@ createApp({
             }
             arrayMessaggi.push(object);
             console.log(arrayMessaggi);
-        }
+        },
+
+        searchPerson(){
+            let parola = this.namePerson;
+            this.contacts.forEach(element => {
+                let nome = element.name;
+                let nomeGrande = nome.toUpperCase();
+                let parolaGrande = parola.toUpperCase();
+                if(nomeGrande.includes(parolaGrande)){
+                    console.log(nome, element.visible);
+                }
+                else{
+                    element.visible = false;
+                    //console.log(nome, element.visible);
+                }
+                
+            });
+            console.log();
+        },
 
 
     },
     mounted(){
+        
         //newMessage();
     },
 }).mount("#app"); 
@@ -823,4 +842,21 @@ function newMessage(){
         status: 'sent'
     }
 }
+*/
+
+/*
+let parola = "C";
+
+function searchPerson(){
+    contatti.forEach(element => {
+        let nome = element.name;
+        let nomeGrande = nome.toUpperCase();
+        let parolaGrande = parola.toUpperCase();
+        if(nomeGrande.includes(parolaGrande)){
+            console.log(nome);
+        }
+    });
+}
+
+searchPerson();
 */
