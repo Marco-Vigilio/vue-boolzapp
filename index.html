@@ -88,13 +88,13 @@
                     <div class="message" v-for="(element, index) in getArrayMessages()" v-bind:class="element.status === 'sent' ? myMessage : youMessage">
                         <div class="flex_message">
                             <p>{{element.message}}</p>
-                            <i v-if=" element.status === 'sent' " class="fa-solid fa-angle-down" @click="boxFunctionMessage()" ></i>
+                            <i v-if=" element.status === 'sent' " class="fa-solid fa-angle-down" @click="deleteMessage(index)" ></i>
                         </div>
                         <span class="last_access">{{getHour(element)}}</span>
-                        
-                        <div class="function_box" v-if=" element.status === 'sent' " v-bind:class="display">
+
+                        <div class="function_box" v-bind:class="display">
                             <p >Message info</p>
-                            <p @click="deleteMessage(element)">Delete Message</p>
+                            <p @click="deleteMessage(index)">Delete Message</p>
                         </div>
                     </div>
 

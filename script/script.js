@@ -382,7 +382,7 @@ createApp({
 
         newMessage(){
             let text = this.newMessageText;
-            console.log(text);
+            //console.log(text);
             let dataOggi = new Date();
             const yyyy = dataOggi.getFullYear();
             let mm = dataOggi.getMonth() + 1; // Months start at 0!
@@ -411,14 +411,14 @@ createApp({
                 status: 'sent',
             }
             arrayMessaggi.push(object);
-            console.log(arrayMessaggi);
+            //console.log(arrayMessaggi);
             this.newMessageText = "";
             setTimeout(this.newMessageResponse, 1000);
         },
 
         newMessageResponse(){
             let text = "ok";
-            console.log(text);
+            //console.log(text);
             let dataOggi = new Date();
             const yyyy = dataOggi.getFullYear();
             let mm = dataOggi.getMonth() + 1; // Months start at 0!
@@ -447,7 +447,7 @@ createApp({
                 status: 'received',
             }
             arrayMessaggi.push(object);
-            console.log(arrayMessaggi);
+            //console.log(arrayMessaggi);
         },
 
         searchPerson(){
@@ -458,27 +458,36 @@ createApp({
                 let parolaGrande = parola.toUpperCase();
                 if(nomeGrande.includes(parolaGrande)){
                     element.visible = true;
-                    console.log(nome, element.visible);
+                    //console.log(nome, element.visible);
                 }
                 else{
                     element.visible = false;
-                    console.log(nome, element.visible);
+                    //console.log(nome, element.visible);
                 }
                 
             });
-            console.log();
+            //console.log();
         },
 
-        boxFunctionMessage(){
-            this.display = "block";
+        returnType(index){
+            console.log(index);
+            let tipo = typeof index;
+            console.log(tipo);
+            return tipo;
         },
 
-        boxFunctionMessageNull(){
-            this.display = "none";
+        boxFunctionMessage(index){
+            let oggetto = this.contacts[this.indexElement];
+            let arrayMessaggi = oggetto.messages;
+            let messaggio = arrayMessaggi[index];
+            console.log(messaggio);
         },
 
-        deleteMessage(element){
-            console.log(element);
+        deleteMessage(index){
+            let oggetto = this.contacts[this.indexElement];
+            let arrayMessage = oggetto.messages;
+            arrayMessage.splice(index, 1);
+            console.log(arrayMessage);
         }
 
     },
