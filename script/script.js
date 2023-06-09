@@ -471,9 +471,15 @@ createApp({
 
         boxFunctionMessage(){
             this.display = "block";
-            console.log(this.display);
         },
 
+        boxFunctionMessageNull(){
+            this.display = "none";
+        },
+
+        deleteMessage(element){
+            console.log(element);
+        }
 
     },
     mounted(){
