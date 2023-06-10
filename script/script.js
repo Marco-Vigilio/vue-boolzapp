@@ -421,7 +421,7 @@ createApp({
         },
 
         newMessageResponse(){
-            let text = "ok";
+            let text = "ciao";
             //console.log(text);
             let dataOggi = new Date();
             const yyyy = dataOggi.getFullYear();
@@ -508,6 +508,7 @@ createApp({
         },
 
         deleteMessage(index){
+            this.showBox ++;
             let oggetto = this.contacts[this.indexElement];
             let arrayMessage = oggetto.messages;
             arrayMessage.splice(index, 1);
