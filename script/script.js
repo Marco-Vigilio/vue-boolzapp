@@ -179,7 +179,10 @@ createApp({
             myMessage: "my_message", 
             youMessage: "you_message",
             display: "none",//chiamo una funzione dove nella stringa richiamo la classe css Block
-            showBox: true,
+            elementShowBox: "",
+            showBox: 0,
+            showBoxVisible: "",
+            functionBox: "function_box",
             pictureImg: "",
             indexElement: 0,
             namePerson: "", //QUANDO RICERCO UNA PERSONA NEL INPUT
@@ -478,18 +481,30 @@ createApp({
         },
 
         boxFunctionMessage(index){
-            if(this.showBox === true){
+            let object = this.contacts[this.indexElement];
+            let arrayMessages = object.messages;
+            let messageElement = arrayMessages[index];
+            this.elementShowBox = messageElement;
+
+            this.showBox ++;
+            console.log(this.showBox);
+            this.showBoxFunction();
+            return messageElement;
+        },
+
+        showBoxFunction(){
+            if((this.showBox % 2) === 1){
+                console.log("Dispari " + this.showBox);
                 console.log("showBox " + this.showBox);
-                console.log("showBox del messaggio " + index);
-                this.showBox = false;
+                console.log("showBox del messaggio " + this.showBox);
+                this.showBoxVisible = true;
             }
             else{
+                console.log("Pari " + this.showBox);
                 console.log("showBox " + this.showBox);
                 console.log("showBox sparito");
-                this.showBox = true;
+                this.showBoxVisible = false;
             }
-            
-            
         },
 
         deleteMessage(index){

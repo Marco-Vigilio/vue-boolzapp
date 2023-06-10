@@ -92,9 +92,11 @@
                         </div>
                         <span class="last_access">{{getHour(element)}}</span>
 
-                        <div class="function_box" v-bind:class="display">
-                            <p >Message info</p>
-                            <p @click="deleteMessage(index)">Delete Message</p>
+                        <div  v-if=" element.status === 'sent' ">
+                            <div v-if="elementShowBox === element" class="function_box" v-if="showBoxVisible === true ">
+                                <p >Message info</p>
+                                <p @click="deleteMessage(index)">Delete Message</p>
+                            </div>
                         </div>
                     </div>
 
